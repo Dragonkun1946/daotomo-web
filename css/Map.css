@@ -97,7 +97,7 @@ nav a:hover::after{
 footer{
 	background:
 	linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.95)),
-	url("../img/footer-bg.jpg") center/cover no-repeat;
+	url("../Image/footer-bg.jpg") center/cover no-repeat;
 	margin-top:100px;
 	padding-top:120px;
 	position:relative;
@@ -205,4 +205,36 @@ footer::before{
 	text-align:center;
 	padding:20px;
 	opacity:0.7;
+}
+
+.map-frame {
+    position: relative;
+}
+
+.map-frame iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+    filter: blur(3px) brightness(0.7);
+}
+
+.maintenance-notice {
+    color: #ff4d4d;
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.map-frame::after {
+    content: "⚠️ MAP ĐANG BẢO TRÌ ⚠️";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff4d4d;
+    font-size: 2rem;
+    font-weight: 900;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    pointer-events: none;
 }

@@ -3,18 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/Map.css">
+    <link rel="stylesheet" href="../css/account.css">
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <title>GoogleMap</title>
-    <style>
-        .maintenance-notice {
-            color: #ff4d4d;
-            font-weight: 700;
-            margin-bottom: 15px;
-            text-align: center;
-            font-size: 1.1rem;
-        }
-    </style>
+    <title>Tài Khoản</title>
 </head>
 <body>
     <nav>
@@ -23,20 +14,31 @@
             <li><a href="../index.html">Trang chủ</a></li>
             <li><a href="../html/Server.html">Server</a></li>
             <li><a href="../html/Map.html">Map</a></li>
-            <li><a href="../html/Discord.html">Discord</a></li>
-            <li><a href="../html/Store.html">Cửa hàng</a></li>
-            <li><a href="../html/Account.html">Tài khoản</a></li>
+            <li><a href="../html/discord.html">Discord</a></li>
+            <li><a href="../html/store.html">Store</a></li>
+            <li><a href="../html/account.html">Tài khoản</a></li>
         </ul>
     </nav>
-
-    <section class="map-page">
-        <h1>Bản đồ thế giới</h1>
-        <p class="maintenance-notice">⚠️ Map hiện đang bảo trì. Vui lòng quay lại sau.</p>
-        <div class="map-frame">
-            <iframe src="http://daotomo.site:25054/"></iframe>
+    <section class="account-page">
+        <h1>Quản Lý Tài Khoản</h1>
+        <div class="account-box">
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('login')">Đăng nhập</button>
+                <button class="tab-btn" onclick="showTab('register')">Đăng ký</button>
+            </div>
+            <div id="login" class="tab-content active">
+                <input type="text" placeholder="Tên tài khoản">
+                <input type="password" placeholder="Mật khẩu">
+                <button class="account-btn">Đăng nhập</button>
+            </div>
+            <div id="register" class="tab-content">
+                <input type="text" placeholder="Tên tài khoản">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Mật khẩu">
+                <button class="account-btn">Tạo tài khoản</button>
+            </div>
         </div>
     </section>
-
     <footer>
         <div class="footer-wave"></div>
         <div class="footer-container">
@@ -68,5 +70,13 @@
             © 2026 Đảo Tò Mò
         </div>
     </footer>
+    <script>
+        function showTab(tab){
+            document.querySelectorAll(".tab-content").forEach(e => e.classList.remove("active"));
+            document.querySelectorAll(".tab-btn").forEach(e => e.classList.remove("active"));
+            document.getElementById(tab).classList.add("active");
+            event.target.classList.add("active");
+        }
+    </script>
 </body>
 </html>
