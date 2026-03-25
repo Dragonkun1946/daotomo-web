@@ -9,13 +9,13 @@ body{
 	background:#0f172a;
 	color:white;
 	overflow-x:hidden;
-    margin:0;
+	margin:0;
 }
-
 
 nav{
 	position:fixed;
 	top:0;
+	left:0;
 	width:100%;
 	display:flex;
 	justify-content:space-between;
@@ -62,9 +62,8 @@ nav a:hover::after{
 	width:100%;
 }
 
-
 .hero{
-	height:100vh;
+	min-height:100vh;
 	background:
 	linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
 	url("../img/bg.jpg") center/cover no-repeat;
@@ -72,13 +71,11 @@ nav a:hover::after{
 	align-items:center;
 	justify-content:center;
 	text-align:center;
-    height:100vh;
-	margin-top:0;
-	padding-top:0;
+	padding:120px 20px 60px;
 }
 
 .hero-content h1{
-	font-size:110px;
+	font-size:clamp(36px,8vw,110px);
 	font-weight:800;
 	text-shadow:
 	0 0 20px #38bdf8,
@@ -109,7 +106,6 @@ nav a:hover::after{
 	transform:translateY(-4px);
 	box-shadow:0 0 20px #38bdf8;
 }
-
 
 .posts{
 	padding:140px 10%;
@@ -176,7 +172,6 @@ nav a:hover::after{
 	font-weight:500;
 }
 
-
 footer{
 	background:
 	linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.95)),
@@ -186,7 +181,6 @@ footer{
 	position:relative;
 	overflow:hidden;
 }
-
 
 footer::before{
 	content:"";
@@ -247,7 +241,6 @@ footer::before{
 	transform:translateX(6px);
 }
 
-
 .socials a{
 	display:inline-flex;
 	align-items:center;
@@ -270,7 +263,6 @@ footer::before{
 	box-shadow:0 0 15px #38bdf8;
 }
 
-
 .footer-line{
 	margin-top:50px;
 	height:2px;
@@ -284,13 +276,15 @@ footer::before{
 	100%{background-position:200px}
 }
 
+.footer-bottom{
+	text-align:center;
+	padding:20px;
+	opacity:0.7;
+}
+
 @media (max-width:1024px){
 	nav{
 		padding:15px 40px;
-	}
-
-	.hero-content h1{
-		font-size:70px;
 	}
 
 	.hero-content p{
@@ -300,24 +294,22 @@ footer::before{
 
 @media (max-width:768px){
 	nav{
-		padding:15px 20px;
+		padding:14px 20px;
+		flex-direction:column;
+		align-items:flex-start;
+		gap:10px;
+	}
+
+	nav ul{
+		width:100%;
+		display:flex;
+		justify-content:space-between;
+		gap:12px;
+		flex-wrap:wrap;
 	}
 
 	.logo{
 		font-size:22px;
-	}
-
-	nav ul{
-		gap:18px;
-	}
-
-	.hero{
-		padding:0 20px;
-	}
-
-	.hero-content h1{
-		font-size:48px;
-		line-height:1.1;
 	}
 
 	.hero-content p{
@@ -352,11 +344,8 @@ footer::before{
 	}
 
 	nav ul{
-		display:none;
-	}
-
-	.hero-content h1{
-		font-size:36px;
+		gap:10px;
+		font-size:14px;
 	}
 
 	.hero-content p{
@@ -389,26 +378,4 @@ footer::before{
 	.socials{
 		margin-top:10px;
 	}
-}
-
-.footer-bottom{
-	text-align:center;
-	padding:20px;
-	opacity:0.7;
-}
-@media (max-width:768px){
-
-	nav{
-		flex-direction:column;
-		align-items:flex-start;
-		gap:10px;
-	}
-
-	nav ul{
-		width:100%;
-		justify-content:space-between;
-		gap:10px;
-		flex-wrap:wrap;
-	}
-
 }
