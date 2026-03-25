@@ -9,10 +9,9 @@ body{
 	background:#0f172a;
 	color:white;
 	overflow-x:hidden;
-    margin:0;
 }
 
-
+/* NAV FIX */
 nav{
 	position:fixed;
 	top:0;
@@ -25,8 +24,6 @@ nav{
 	backdrop-filter:blur(12px);
 	z-index:1000;
 	border-bottom:1px solid rgba(255,255,255,0.05);
-    position:absolute;
-	top:0;
 }
 
 .logo{
@@ -64,46 +61,63 @@ nav a:hover::after{
 	width:100%;
 }
 
+/* MAP PAGE */
 .map-page{
-    padding-top:140px;
-    text-align:center;
+	padding-top:140px;
+	text-align:center;
 }
 
 .map-page h1{
-    font-size:50px;
-    margin-bottom:40px;
-    text-shadow:
-    0 0 15px #38bdf8,
-    0 0 25px #22c55e;
+	font-size:50px;
+	margin-bottom:40px;
+	text-shadow:
+	0 0 15px #38bdf8,
+	0 0 25px #22c55e;
 }
 
 .map-frame{
-    width:90%;
-    height:700px;
-    margin:auto;
-    border-radius:16px;
-    overflow:hidden;
-    box-shadow:
-    0 0 25px #38bdf8,
-    0 0 40px #22c55e;
+	width:90%;
+	height:650px;
+	margin:auto;
+	border-radius:16px;
+	overflow:hidden;
+	box-shadow:
+	0 0 25px #38bdf8,
+	0 0 40px #22c55e;
+	position:relative;
 }
 
 .map-frame iframe{
-    width:100%;
-    height:100%;
-    border:none;
+	width:100%;
+	height:100%;
+	border:none;
+	filter:blur(3px) brightness(0.7);
 }
 
+/* TEXT BẢO TRÌ */
+.map-frame::after{
+	content:"⚠️ MAP ĐANG BẢO TRÌ ⚠️";
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	color:#ff4d4d;
+	font-size:2rem;
+	font-weight:900;
+	text-shadow:2px 2px 8px rgba(0,0,0,0.7);
+	pointer-events:none;
+}
+
+/* FOOTER */
 footer{
 	background:
 	linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.95)),
-	url("../Image/footer-bg.jpg") center/cover no-repeat;
+	url("../img/footer-bg.jpg") center/cover no-repeat;
 	margin-top:100px;
 	padding-top:120px;
 	position:relative;
 	overflow:hidden;
 }
-
 
 footer::before{
 	content:"";
@@ -121,15 +135,6 @@ footer::before{
 @keyframes glowMove{
 	0%{transform:translate(0,0)}
 	100%{transform:translate(200px,150px)}
-}
-
-.footer-wave{
-	position:absolute;
-	top:-110px;
-	left:0;
-	width:100%;
-	height:120px;
-	background:linear-gradient(180deg,transparent,#020617);
 }
 
 .footer-container{
@@ -164,77 +169,45 @@ footer::before{
 	transform:translateX(6px);
 }
 
-
-.socials a{
-	display:inline-flex;
-	align-items:center;
-	justify-content:center;
-	margin-right:15px;
-	padding:10px 18px;
-	border-radius:8px;
-	background:rgba(255,255,255,0.06);
-	color:white;
-	text-decoration:none;
-	font-weight:500;
-	position:relative;
-	overflow:hidden;
-	transition:0.3s;
-}
-
-.socials a:hover{
-	background:#38bdf8;
-	color:white;
-	box-shadow:0 0 15px #38bdf8;
-}
-
-
-.footer-line{
-	margin-top:50px;
-	height:2px;
-	background:linear-gradient(90deg,transparent,#38bdf8,transparent);
-	background-size:200px;
-	animation:lineMove 4s linear infinite;
-}
-
-@keyframes lineMove{
-	0%{background-position:-200px}
-	100%{background-position:200px}
-}
-
 .footer-bottom{
 	text-align:center;
 	padding:20px;
 	opacity:0.7;
 }
 
-.map-frame {
-    position: relative;
+/* MOBILE */
+@media (max-width:768px){
+
+	nav{
+		padding:15px 20px;
+		flex-direction:column;
+		align-items:flex-start;
+		gap:10px;
+	}
+
+	nav ul{
+		width:100%;
+		justify-content:space-between;
+		flex-wrap:wrap;
+		gap:10px;
+	}
+
+	.map-page h1{
+		font-size:36px;
+	}
+
+	.map-frame{
+		height:450px;
+	}
 }
 
-.map-frame iframe {
-    width: 100%;
-    height: 600px;
-    border: none;
-    filter: blur(3px) brightness(0.7);
-}
+@media (max-width:480px){
 
-.maintenance-notice {
-    color: #ff4d4d;
-    font-weight: 700;
-    font-size: 1.3rem;
-    text-align: center;
-    margin-bottom: 15px;
-}
+	.map-frame{
+		height:380px;
+	}
 
-.map-frame::after {
-    content: "⚠️ MAP ĐANG BẢO TRÌ ⚠️";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #ff4d4d;
-    font-size: 2rem;
-    font-weight: 900;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-    pointer-events: none;
+	.map-page h1{
+		font-size:28px;
+	}
 }
