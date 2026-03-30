@@ -95,9 +95,8 @@
         © 2026 Đảo Tò Mò
     </div>
 </footer>
-
 <script>
-function showTab(tab){
+    function showTab(tab){
     document.querySelectorAll(".tab-content").forEach(e => e.classList.remove("active"));
     document.querySelectorAll(".tab-btn").forEach(e => e.classList.remove("active"));
     document.getElementById(tab).classList.add("active");
@@ -107,3 +106,5 @@ function showTab(tab){
 
 </body>
 </html>
+
+<script>
